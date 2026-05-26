@@ -86,6 +86,12 @@ footer {
   box-shadow: 0 0 0 5px rgba(190, 183, 172, 0.36);
 }
 
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 nav {
   display: flex;
   gap: 1.1rem;
@@ -100,6 +106,17 @@ nav a {
 
 nav a:hover {
   color: var(--text);
+}
+
+.top-actions {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.btn-top {
+  padding: 0.46rem 0.84rem;
+  font-size: 0.84rem;
+  line-height: 1;
 }
 
 main {
@@ -575,6 +592,18 @@ footer {
   .steps,
   .hero-metrics {
     grid-template-columns: 1fr;
+  }
+
+  .topbar-right {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .top-actions {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
