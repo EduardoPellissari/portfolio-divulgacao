@@ -62,3 +62,5 @@ Como resolver (token no lugar da senha):
 11. Quando pedir credenciais no Terminal:
    - Username: seu usuario GitHub (ex.: `EduardoPellissari`)
    - Password: cole o token (nao e sua senha da conta).
+
+Obs.: se o terminal nao perguntar username/password automaticamente, o script agora abre uma etapa manual para voce digitar usuario e token e tentar novamente.
