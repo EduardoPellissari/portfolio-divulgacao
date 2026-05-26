@@ -12,6 +12,7 @@
   --brand: #84ff00;
   --brand-hover: #84ff00;
   --brand-2: #84ff00;
+  --brand-3: #84ff00;
   --line: #beb7ac;
   --line-dark: #beb7ac;
   --shadow: 0 14px 28px rgba(58, 61, 57, 0.14);
@@ -133,7 +134,7 @@ main {
 .overline {
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--brand-2);
+  color: var(--brand-3);
   font-size: 0.8rem;
   margin-bottom: 0.65rem;
 }
