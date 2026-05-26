@@ -11,7 +11,7 @@
   --muted: #70736c;
   --brand: #84ff00;
   --brand-hover: #84ff00;
-  --brand-2: #70736c;
+  --brand-2: #84ff00;
   --line: #beb7ac;
   --line-dark: #beb7ac;
   --shadow: 0 14px 28px rgba(58, 61, 57, 0.14);
@@ -438,7 +438,7 @@ h1 {
   border: 1px solid var(--line-dark);
   border-radius: 12px;
   padding: 0.72rem 0.75rem;
-  background: rgba(201, 194, 183, 0.35);
+  background: #c9c2b759;
 }
 
 .case-block h4 {
