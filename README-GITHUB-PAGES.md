@@ -64,3 +64,10 @@ Como resolver (token no lugar da senha):
    - Password: cole o token (nao e sua senha da conta).
 
 Obs.: se o terminal nao perguntar username/password automaticamente, o script agora abre uma etapa manual para voce digitar usuario e token e tentar novamente.
+
+Se aparecer erro `HTTP 400` / `remote end hung up unexpectedly`:
+
+- Esse erro normalmente e de conexao/protocolo de rede durante o envio (nao e erro de token).
+- O script ja tenta modo de envio estavel automaticamente.
+- Se ainda falhar, troque de rede (ou desligue VPN) e rode novamente.
+- Como alternativa rapida, no repositorio do GitHub use: `Add file` > `Upload files`.

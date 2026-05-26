@@ -13,6 +13,16 @@ pause_and_exit() {
 
 cd "$(dirname "$0")"
 
+push_estavel() {
+  git \
+    -c http.version=HTTP/1.1 \
+    -c http.postBuffer=157286400 \
+    -c core.compression=0 \
+    -c http.lowSpeedLimit=0 \
+    -c http.lowSpeedTime=999999 \
+    push -u origin main
+}
+
 echo "=========================================="
 echo " Publicar projeto no GitHub Pages"
 echo "=========================================="
@@ -55,7 +65,7 @@ else
   git remote add origin "$REPO_URL" || pause_and_exit 1
 fi
 
-if git push -u origin main; then
+if push_estavel; then
   PUSH_OK=1
 else
   PUSH_OK=0
@@ -90,7 +100,14 @@ esac
 EOF
   chmod 700 "$ASKPASS_FILE"
 
-  if GIT_TERMINAL_PROMPT=0 GH_USER="$GH_USER" GH_TOKEN="$GH_TOKEN" GIT_ASKPASS="$ASKPASS_FILE" git -c credential.helper= push -u origin main; then
+  if GIT_TERMINAL_PROMPT=0 GH_USER="$GH_USER" GH_TOKEN="$GH_TOKEN" GIT_ASKPASS="$ASKPASS_FILE" git \
+      -c credential.helper= \
+      -c http.version=HTTP/1.1 \
+      -c http.postBuffer=157286400 \
+      -c core.compression=0 \
+      -c http.lowSpeedLimit=0 \
+      -c http.lowSpeedTime=999999 \
+      push -u origin main; then
     PUSH_OK=1
   else
     PUSH_OK=0
@@ -101,8 +118,18 @@ fi
 
 if [ "$PUSH_OK" -ne 1 ]; then
   echo ""
+  echo "Tentando uma ultima vez em modo estavel..."
+  if push_estavel; then
+    PUSH_OK=1
+  fi
+fi
+
+if [ "$PUSH_OK" -ne 1 ]; then
+  echo ""
   echo "Falha no envio para o GitHub."
-  echo "Confirme se o token tem permissao de repositorio (repo) e se a URL do repo esta correta."
+  echo "Seu token parece valido, mas houve erro de conexao HTTP no envio."
+  echo "Tente trocar de rede (ou desligar VPN) e rodar novamente."
+  echo "Se preferir, use o envio manual no site do GitHub (Add file > Upload files)."
   pause_and_exit 1
 fi
 
