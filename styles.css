@@ -9,7 +9,7 @@
   --text: #3a3d39;
   --card-text: #3a3d39;
   --muted: #70736c;
-  --brand: #d97937;
+  --brand: #84ff00;
   --brand-hover: #e69255;
   --brand-2: #98a89a;
   --line: #beb7ac;
@@ -180,7 +180,8 @@ h1 {
 .btn-primary {
   color: var(--text);
   background: var(--brand);
-  box-shadow: 0 10px 24px rgba(217, 121, 55, 0.28);
+  box-shadow: 0 10px 24px 
+  rgba(217, 121, 55, 0.28);
 }
 
 .btn-primary:hover {
