@@ -39,3 +39,26 @@ Este guia cria um link como:
 - O link do GitHub Pages e publico (qualquer pessoa com internet consegue abrir).
 - Sempre que voce atualizar os arquivos e fizer novo envio, o site atualiza.
 - Se a atualizacao demorar para aparecer, aguarde alguns minutos e atualize a pagina com `Cmd + Shift + R`.
+
+## Se aparecer erro de autenticacao no envio
+
+Mensagem comum:
+
+- `Invalid username or token`
+- `Password authentication is not supported for Git operations`
+
+Como resolver (token no lugar da senha):
+
+1. No GitHub, clique na sua foto > `Settings`.
+2. Va em `Developer settings`.
+3. `Personal access tokens` > `Tokens (classic)`.
+4. Clique em `Generate new token (classic)`.
+5. Nome: `portfolio-push` (exemplo).
+6. Expiracao: 30 dias (ou o periodo que preferir).
+7. Marque o escopo `repo`.
+8. Clique em `Generate token`.
+9. Copie o token na hora (o GitHub mostra apenas uma vez).
+10. Rode `publicar-github-pages.command` novamente.
+11. Quando pedir credenciais no Terminal:
+   - Username: seu usuario GitHub (ex.: `EduardoPellissari`)
+   - Password: cole o token (nao e sua senha da conta).
