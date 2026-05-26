@@ -180,7 +180,7 @@ h1 {
 .btn-primary {
   color: var(--text);
   background: var(--brand);
-  box-shadow: 0 10px 24px rgba(38, 255, 0, 0.28);
+  box-shadow: 0 10px 24px rgba(217, 121, 55, 0.28);
 }
 
 .btn-primary:hover {
