@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: portfolio-divulgacao
+    runtime: static
+    buildCommand: echo "Static site - sem etapa de build"
+    staticPublishPath: .
+    autoDeploy: true
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: true
