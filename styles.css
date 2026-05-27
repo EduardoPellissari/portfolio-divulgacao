@@ -373,6 +373,12 @@ h1 {
   gap: 0.8rem;
 }
 
+.carousel-cta {
+  margin-top: 0.9rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .carousel-dots {
   display: flex;
   flex-wrap: wrap;
